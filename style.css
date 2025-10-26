@@ -16,7 +16,7 @@ input[type="text"]:focus {
     box-shadow: 0 4px 16px rgba(191,164,90,0.18);
     background: #fffbe6;
 }
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&family=EB+Garamond:wght@400;700&display=swap');
 :root {
     --skin-bg: #f7e7b2;
     --skin-accent: #e6d19c;
@@ -26,23 +26,106 @@ input[type="text"]:focus {
     --button-bg: #bfa45a;
     --button-hover: #a08c4a;
     --white: #fff;
+    --decorative-border: repeating-linear-gradient(90deg, #bfa45a 0 2px, transparent 2px 20px);
 }
+
 
 
 body {
     margin: 0;
-    font-family: 'Georgia', 'Times New Roman', serif;
+    font-family: 'EB Garamond', 'Georgia', 'Times New Roman', serif;
     background: var(--skin-bg);
     color: var(--text-main);
+    background-image: var(--parchment-texture);
+    background-repeat: repeat;
+    min-height: 100vh;
+    box-shadow: 0 0 60px 0 #bfa45a inset;
+}
+/* Book-style typography */
 a, p, li, .main-text, .desc, .footer-text {
-    font-family: 'Georgia', 'Times New Roman', serif;
+    font-family: 'EB Garamond', 'Georgia', 'Times New Roman', serif;
+    font-size: 1.13em;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'IM Fell English', serif;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     color: var(--text-main);
+    text-shadow: 0 2px 8px #e6d19c77;
 }
+
+/* Decorative book border */
+body:before {
+    content: '';
+    position: fixed;
+    z-index: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 18px solid #e6d19c;
+    border-image: var(--decorative-border) 18 repeat;
+    pointer-events: none;
 }
+
+main, .main, .history-block, .figures-block, .legacy-block, .slider, .catalog {
+    background: rgba(255, 248, 220, 0.93);
+    border-radius: 18px;
+    box-shadow: 0 4px 32px #bfa45a33, 0 1px 0 #fff8dc inset;
+    border: 2px solid #e6d19c;
+    margin-bottom: 32px;
+    padding: 32px 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Drop cap for first paragraph */
+.main-text p:first-letter, .history-block p:first-letter, .legacy-block p:first-letter {
+    float: left;
+    font-size: 2.5em;
+    line-height: 1;
+    font-family: 'IM Fell English', serif;
+    color: #bfa45a;
+    padding-right: 8px;
+    padding-top: 2px;
+}
+
+/* Faded paper edge effect */
+main, .main, .history-block, .figures-block, .legacy-block, .slider, .catalog {
+    box-shadow: 0 0 60px 0 #bfa45a55 inset, 0 4px 32px #bfa45a33;
+}
+
+/* Decorative horizontal rule */
+hr {
+    border: none;
+    border-top: 2px solid #bfa45a;
+    margin: 32px 0;
+    opacity: 0.5;
+}
+
+/* Add a subtle page curl effect to main blocks */
+main, .main, .history-block, .figures-block, .legacy-block, .slider, .catalog {
+    position: relative;
+    overflow: hidden;
+}
+main:after, .main:after, .history-block:after, .figures-block:after, .legacy-block:after, .slider:after, .catalog:after {
+    content: '';
+    position: absolute;
+    right: 0; bottom: 0;
+    width: 80px; height: 80px;
+    background: radial-gradient(ellipse at bottom right, #e6d19c 0%, transparent 80%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Animate fade-in for book style */
+.fade-in {
+    opacity: 0;
+    animation: fadeInBook 1.2s forwards;
+}
+@keyframes fadeInBook {
+    from { opacity: 0; transform: translateY(40px) scale(0.98); }
+    to { opacity: 1; transform: none; }
+}
+
 
 a {
     color: var(--text-main);
@@ -67,11 +150,9 @@ a:hover {
 }
 
 .logo {
-    width: 70px;
-    height: 65px;
+    width: 80px;
+    height: 70px;
     background: url("Qazaq_journal_logo.svg.png") no-repeat center/cover;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px var(--skin-shadow);
     animation: popIn 1.2s;
 
 }

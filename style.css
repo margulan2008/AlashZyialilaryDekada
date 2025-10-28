@@ -225,8 +225,8 @@ a:hover {
 .main-image {
     width: 340px;
     height: 340px;
-    background: url("i\(1\).png") no-repeat center/cover;
-    border-radius: 50%;
+    background: url("h.png") no-repeat center/cover;
+    border-radius: 20px;
     box-shadow: 0 8px 32px var(--skin-shadow);
     animation: float 3s infinite alternate;
 }
@@ -372,11 +372,10 @@ footer {
 }
 
 .footer-logo {
-    width: 48px;
-    height: 48px;
-    background: var(--skin-highlight);
-    border-radius: 50%;
-    box-shadow: 0 2px 8px var(--skin-shadow);
+    width: 80px;
+    height: 70px;
+    background: url("Qazaq_journal_logo.svg.png") no-repeat center/cover;
+    animation: popIn 1.2s;
 }
 
 .footer-text {
@@ -433,7 +432,7 @@ footer {
 .view-all::after {
     content: '';
     position: absolute;
-    left: -60%;
+    left: -90%;
     top: 0;
     width: 60%;
     height: 100%;
@@ -454,6 +453,58 @@ footer {
     left: 110%;
     transition: left 0.5s;
 }
+
+.main-button {
+    display: inline-block;
+    margin: 32px 20px 0 20px;
+    padding: 14px 38px;
+    background: linear-gradient(90deg, var(--button-bg) 60%, var(--button-hover) 100%);
+    color: var(--text-main);
+    font-size: 1.15em;
+    font-weight: 600;
+    border-radius: 28px;
+    box-shadow: 0 4px 18px var(--skin-shadow);
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: 
+        background 0.4s cubic-bezier(.4,2,.6,1), 
+        color 0.2s, 
+        transform 0.2s, 
+        box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    animation: popIn 1.2s;
+    margin-left: 25px;
+    
+    
+}
+
+.main-button::after {
+    content: '';
+    position: absolute;
+    left: -90%;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.6) 100%);
+    transform: skewX(-25deg);
+    transition: left 0.5s;
+    pointer-events: none;
+}
+
+.main-button:hover {
+    background: linear-gradient(90deg, var(--button-hover) 0%, var(--button-bg) 100%);
+    color: var(--white);
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 8px 32px var(--skin-shadow);
+}
+
+.main-button:hover::after {
+    left: 110%;
+    transition: left 0.5s;
+}
+
 
 
 @keyframes fadeIn {
@@ -498,7 +549,7 @@ footer {
         text-align: left;
     }
     .main-image {
-        width: 340px;
+        width: 700px;
         height: 340px;
     }
     .catalog {
@@ -602,7 +653,7 @@ footer {
         box-shadow: 0 6px 18px rgba(234,201,179,0.25);
     }
     .main-image {
-        width: 140px;
+        width: 700px;
         height: 140px;
         margin: 0;
         box-shadow: 0 10px 24px rgba(234,201,179,0.18);

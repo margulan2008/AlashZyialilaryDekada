@@ -32,3 +32,32 @@ function moveSlider(direction) {
 }
 
 updateSlider();
+
+
+const searchInput = document.getElementById('searchInput');
+    const clearInput = document.getElementById('clearInput');
+    if (searchInput && clearInput) {
+        searchInput.addEventListener('input', function() {
+            clearInput.style.display = this.value ? 'inline-block' : 'none';
+        });
+        clearInput.addEventListener('click', function() {
+            searchInput.value = '';
+            clearInput.style.display = 'none';
+            searchInput.focus();
+        });
+        searchInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                
+                const val = this.value.trim().toLowerCase();
+                const cards = document.querySelectorAll('.book-card h3');
+                for (const card of cards) {
+                    if (card.textContent.toLowerCase().includes(val)) {
+                        card.scrollIntoView({behavior:'smooth', block:'center'});
+                        card.classList.add('highlight');
+                        setTimeout(()=>card.classList.remove('highlight'),1200);
+                        break;
+                    }
+                }
+            }
+        });
+    }

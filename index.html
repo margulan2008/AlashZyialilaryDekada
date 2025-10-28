@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Welcome to Armani-Zhan</title>
+    <title>Алаш партиясы — тарихи мәліметтер</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -10,17 +10,28 @@
         <div class="header">
             <div class="logo"></div>
             <div class="nav">
-                <input type="text" placeholder="Search...">
+                <div class="input-flex">
+                    <input type="text" id="searchInput" placeholder="Іздеу..." list="search-suggestions" autocomplete="on">
+                    <button type="button" id="clearInput" title="Тазалау" style="display:none">×</button>
+                    <datalist id="search-suggestions">
+                        <option value="Әлихан Бөкейхан">
+                        <option value="Ахмет Байтұрсынұлы">
+                        <option value="Міржақып Дулатұлы">
+                        <option value="Алаш партиясы">
+                        <option value="Мұстафа Шоқай">
+                        <option value="Халел Досмұхамедұлы">
+                    </datalist>
+                </div>
             </div>
         </div>
     </header>
     <main>  
         <div class="main">
             <div class="main-text">
-                <h1>ALASH</h1>
-                <h2>welcome to Alash site</h2>
-                
-                <a href="moreinf.html" class="main-button">Learn More</a>
+                <h1>Алаш партиясы</h1>
+                <h2>Қазақтың ұлттық-демократиялық қозғалысы</h2>
+                <p>Алаш партиясы — XX ғасыр басында қазақ халқының тәуелсіздігі мен ұлттық мүддесін қорғау мақсатында құрылған саяси ұйым.</p>
+                <a href="moreinf.html" class="main-button">Толығырақ</a>
             </div>
             <div class="main-image"></div>
         </div>
@@ -29,46 +40,47 @@
     <div class="catalog" id="catalog">
         <div class="catalog-item">
             <div class="catalog-image1"></div>
-            <h3>Ahmet Baitursinyly</h3>
-            <a href="">Ary qarai oky</a>
+            <h3>Әлихан Бөкейхан</h3>
+            <a href="">Толығырақ</a>
         </div>
         <div class="catalog-item">
             <div class="catalog-image2"></div>
-            <h3>Mirzhaqyp</h3>
-            <a href="">order</a>
+            <h3>Ахмет Байтұрсынұлы</h3>
+       
+            <a href="">Толығырақ</a>
         </div>
         <div class="catalog-item">
             <div class="catalog-image3"></div>
-            <h3>Product 3</h3>
-            <p>Description of Product 3</p>
-            <a href="">order</a>
+            <h3>Міржақып Дулатұлы</h3>
+        
+            <a href="">Толығырақ</a>
         </div>
         <div class="catalog-item">
             <div class="catalog-image4"></div>
-            <h3>Product 4</h3>
-            <p>Description of Product 4</p>
-            <a href="">order</a>
+            <h3>Жүсіпбек Аймауытов</h3>
+         
+            <a href="">Толығырақ</a>
         </div>
         <div class="catalog-item">
             <div class="catalog-image5"></div>
-            <h3>Product 5</h3>
-            <p>Description of Product 5</p>
-            <a href="">order</a>
+            <h3>Мұстафа Шоқай</h3>
+          
+            <a href="">Толығырақ</a>
         </div>
         <div class="catalog-item">
             <div class="catalog-image6"></div>
-            <h3>Product 6</h3>
-            <p>Description of Product 6</p>
-            <a href="">order</a>
+            <h3>Халел Досмұхамедұлы</h3>
+          
+            <a href="">Толығырақ</a>
         </div>
     </div>
     <div class="arrow-right" onclick="moveSlider(1)"><a href="javascript:void(0)">&gt;</a></div>
 </div>
-<a href="choose-type.html" class="view-all">View All Products</a>
+<a href="#" class="view-all">Барлық қайраткерлер</a>
        <footer>
         <div class="footer">
             <div class="footer-logo"></div>
-            <div class="footer-text">© 2025 Alash. All rights reserved.</div>
+            <div class="footer-text">© 2025 Алаш партиясы. Барлық құқықтар қорғалған.</div>
             <div class="footer-social">
                 <a href="" class="social-icon facebook">facebook</a>
                 <a href="" class="social-icon twitter">twitter</a>
@@ -80,6 +92,7 @@
          </footer>
     </main>  
     <script src="slider.js"></script>
+   
     </body>
 
 </html>

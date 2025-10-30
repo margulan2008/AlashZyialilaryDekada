@@ -46,7 +46,9 @@
           <p style="margin-top:18px"><a class="main-button" href="#timeline">Хронологияны қарау</a></p>
         </div>
 
-        <div class="portrait" style="background-image:url('4.jpg')" aria-hidden="true"></div>
+        <div class="portrait tilt-target auto-bob" aria-hidden="false">
+          <img class="portrait-img" src="4.jpg" alt="Әлихан Бөкейхан" loading="lazy">
+        </div>
       </div>
 
       <div class="section" id="summary">
@@ -166,5 +168,6 @@
       document.querySelectorAll('.section, .timeline-list li, .catalog-list .book-card').forEach((el)=> io.observe(el));
     })();
   </script>
+  <script src="ux.js" defer></script>
 </body>
 </html>

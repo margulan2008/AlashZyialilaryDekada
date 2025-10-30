@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Алаш — Қозғалыс және мұра</title>
+  
+  <link rel="stylesheet" href="alash.css">
+  <style>
+    /* Small page-specific tweaks */
+    .hero-biography { display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap; }
+    .portrait { width:320px;height:320px;border-radius:12px;background:#fff center/cover no-repeat;box-shadow:0 12px 30px rgba(90,74,27,0.15);border:3px solid #e6d19c; flex:0 0 320px; }
+    .bio-summary { max-width:580px; }
+    .section { margin-top:28px; }
+    .timeline-list { list-style:none;padding-left:0; }
+    .timeline-list li { padding:12px 0;border-bottom:1px dashed rgba(191,164,90,0.12); }
+    .timeline-controls { display:flex;gap:8px;flex-wrap:wrap;margin-top:12px; }
+    .btn-small { background:transparent;border:1px solid #bfa45a;padding:8px 12px;border-radius:10px;color:var(--text);cursor:pointer; }
+    .book-card .card-img{ width:100%; height:220px; object-fit:cover; border-radius:10px; margin-bottom:12px; }
+    @media (max-width:900px) { .hero-biography{flex-direction:column-reverse} .portrait{width:220px;height:220px} }
+    /* Page-only gallery and lightbox styles */
+    .gallery { display:grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-top:12px; }
+    .gallery figure{ margin:0; border-radius:10px; overflow:hidden; background:#fff; box-shadow:0 8px 26px rgba(160,126,48,0.06); cursor:pointer; }
+    .gallery img{ width:100%; height:140px; object-fit:cover; display:block; transition: transform 220ms ease, filter 220ms ease; }
+    .gallery figure:hover img{ transform: scale(1.06); filter:brightness(1.04); }
+    .gallery figcaption{ padding:8px 10px; font-size:.92rem; color:var(--text); }
+
+    /* Lightbox */
+    .lb-backdrop{ position:fixed; inset:0; background:rgba(10,8,6,0.7); display:flex; align-items:center; justify-content:center; z-index:9999; opacity:0; pointer-events:none; transition:opacity 220ms ease; }
+    .lb-backdrop.open{ opacity:1; pointer-events:auto; }
+    .lb-inner{ max-width:92vw; max-height:88vh; background: #fff; padding:8px; border-radius:8px; box-shadow:0 20px 60px rgba(0,0,0,0.6); }
+    .lb-inner img{ max-width:100%; max-height:72vh; display:block; border-radius:6px; }
+    .lb-caption{ margin-top:8px; color:var(--text); font-size:.98rem; }
+    .lb-close{ position:absolute; right:16px; top:16px; background:rgba(255,255,255,0.9); border-radius:8px; padding:6px 8px; cursor:pointer; border:1px solid rgba(0,0,0,0.05); }
+  </style>
+</head>
+<body class="alash-page">
+  <header class="header">
+    <div class="logo"></div>
+    <nav class="nav">
+      <a href="index.html" class="btn-small">Басты бет</a>
+      <a href="#timeline" class="btn-small">Хронология</a>
+      <a href="#legacy" class="btn-small">Мұра</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="main historical-main fade-in">
+      <div class="hero-biography">
+        <div class="bio-summary">
+          <h1 class="book-title">Алаш</h1>
+          <h2 class="book-subtitle">(Алаш қозғалысы, 1917–1920) — ұлттық автономия және ұлт-әлеуметтік жаңғыру</h2>
+          <p>Алаш — қазақ қоғамының алғашқы саяси жаңару қозғалыстарының бірі. Ол қазақ интеллигенциясының ұлт мүддесін қорғау, мәдениет пен білімді дамыту, ұлттық автономия құру идеяларын алға тартқан ұйымдар мен қайраткерлерден құралды.</p>
+          <p style="margin-top:18px"><a class="main-button" href="#timeline">Хронологияны қарау</a></p>
+        </div>
+
+        <div class="portrait tilt-target auto-bob" aria-hidden="false">
+          <img class="portrait-img" src="Ахмет_Байтұрсынұлы.jpg" alt="Алаш қозғалысы — тарихи көрініс" loading="lazy">
+        </div>
+      </div>
+
+      <div class="section" id="summary">
+        <h3>Қысқаша мәлімет</h3>
+        <p>Алаш қозғалысы XX ғасыр басында қазақ зиялылары мен ғалымдарының бастамасымен пайда болды. Оның мақсаты — қазақты саяси және мәдени тұрғыдан жаңғырту, өзін-өзі басқарудың алғашқы негіздерін құру еді. Алаш партиясы мен Алаш Орда үкіметі осы идеяларды жүзеге асыруға талпынды.</p>
+      </div>
+
+      <div class="section" id="timeline">
+        <h3>Хронология</h3>
+        <div class="timeline-controls">
+          <button class="btn-small" data-target="1905">1905</button>
+          <button class="btn-small" data-target="1917">1917</button>
+          <button class="btn-small" data-target="1918">1918</button>
+          <button class="btn-small" data-target="1919">1919</button>
+          <button class="btn-small" data-target="1920">1920</button>
+        </div>
+        <ul class="timeline-list">
+          <li id="t-1905"><b>1905:</b> Ресейдегі 1905 жылғы революциясы мен сол дәуірдегі саяси толқулар қазақ зиялылары арасында ұлт идеяларын жетілдіруге түрткі болды.</li>
+          <li id="t-1917"><b>1917:</b> Ақпан және Қазан төңкерістері нәтижесінде ұлттық қозғалыстар белсенділігін арттырды; қазақ зиялылары тұңғыш рет ұйымдасуға көшті.</li>
+          <li id="t-1918"><b>1918:</b> Алаш Орда — уақытша ұлттық үкіметтің құрылуы және ұлттық автономия идеясының практикалық талпыныстары.</li>
+          <li id="t-1919"><b>1919:</b> Әр түрлі ішкі және сыртқы қақтығыстар, әрі кеңестік билік орнауының күшеюі — алаштық ұйымдардың қысымы басталды.</li>
+          <li id="t-1920"><b>1920:</b> Кеңестік билік аймақтық автономияларды орталықтандыруды күшейтті; алаштық құрылымдар ығыстырылып, көптеген қайраткерлер репрессияға ұшырады немесе эмиграцияға кеткен кезең.</li>
+        </ul>
+      </div>
+
+      <div class="section" id="works">
+        <h3>Негізгі бастамалар</h3>
+        <ul>
+          <li>Білім жүйесін реформалау: мектептер ашу және қазақ тілінде оқыту бастамалары.</li>
+          <li>Саяси-құқықтық автономия идеяларын насихаттау.</li>
+          <li>Ұлттық мәдениет пен әдебиетті қолдау арқылы ұлтының санасын қалыптастыру.</li>
+        </ul>
+      </div>
+
+      <div class="section" id="legacy">
+        <h3>Мұра</h3>
+        <p>Алаш қозғалысының идеялары қазіргі қазақ мемлекеттігінің негізін қалыптастыруда маңызды рөл атқарды. Оның мұрасы — ұлттық сана, тіл және мемлекеттік институттар қалыптастырудағы алғашқы жүйелі қадамдар.</p>
+      </div>
+
+      <hr>
+
+      <div class="section">
+        <h3>Қосымша ресурстар</h3>
+        <div class="catalog-list">
+          <div class="book-card">
+            <img class="card-img" src="7.jpg" alt="Алаш жиналысы" loading="lazy">
+            <h4>Алаш туралы зерттеулер</h4>
+            <p>Алаш қозғалысы туралы монографиялар, алғашқы құжаттар мен мақалалар — зерттеушілер мен қызығушылар үшін маңызды дереккөздер.</p>
+          </div>
+        </div>
+        <!-- Page-local gallery using images from project folder -->
+        <h3 style="margin-top:18px">Галерея</h3>
+        <div class="gallery" aria-hidden="false">
+          <figure tabindex="0" data-src="Ахмет_Байтұрсынұлы.jpg" data-caption="Ахмет Байтұрсынұлы және алаш дәуірі">
+            <img src="Ахмет_Байтұрсынұлы.jpg" alt="Ахмет Байтұрсынұлы" loading="lazy">
+            <figcaption>Ахмет Байтұрсынұлы</figcaption>
+          </figure>
+          <figure tabindex="0" data-src="4.jpg" data-caption="Әлихан Бөкейхан">
+            <img src="4.jpg" alt="Әлихан Бөкейхан" loading="lazy">
+            <figcaption>Әлихан Бөкейхан</figcaption>
+          </figure>
+          <figure tabindex="0" data-src="7.jpg" data-caption="Алаш жиналысы">
+            <img src="7.jpg" alt="Алаш жиналысы" loading="lazy">
+            <figcaption>Алаш жиналысы</figcaption>
+          </figure>
+          <figure tabindex="0" data-src="i.webp" data-caption="Құжат пен басылым">
+            <img src="i.webp" alt="Құжат" loading="lazy">
+            <figcaption>Құжат және басылым</figcaption>
+          </figure>
+          <figure tabindex="0" data-src="u.png" data-caption="Алаш қайраткері">
+            <img src="u.png" alt="Алаш қайраткері" loading="lazy">
+            <figcaption>Алаш қайраткері</figcaption>
+          </figure>
+          <figure tabindex="0" data-src="h.png" data-caption="Тарихи фото">
+            <img src="h.png" alt="Тарихи фото" loading="lazy">
+            <figcaption>Тарихи фото</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox markup (page-local) -->
+  <div class="lb-backdrop" id="lb" role="dialog" aria-hidden="true">
+    <div class="lb-inner" role="document">
+      <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+      <img id="lbImg" src="" alt="">
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-logo"></div>
+    <div class="footer-text">© 2025 Алаш мұра — тарихи деректер. Барлық құқықтар қорғалған.</div>
+  </footer>
+
+  <script>
+    // Same enhanced script used on biography page: IntersectionObserver-driven reveal + stagger
+    (function(){
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      document.querySelectorAll('.timeline-controls button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.dataset.target;
+          const el = document.getElementById('t-' + target);
+          if (el) {
+            el.scrollIntoView({behavior: prefersReduced ? 'auto' : 'smooth', block:'center'});
+            el.classList.add('highlight');
+            setTimeout(()=>el.classList.remove('highlight'),1200);
+            el.setAttribute('tabindex','-1'); el.focus({preventScroll:true}); el.removeAttribute('tabindex');
+          }
+        });
+      });
+
+      window.addEventListener('load', ()=>{
+        document.querySelectorAll('.fade-in').forEach((el,i)=>{
+          el.style.setProperty('--delay', (i*0.12)+'s');
+        });
+      });
+
+      if (!('IntersectionObserver' in window) || prefersReduced) {
+        document.querySelectorAll('.section, .timeline-list li, .catalog-list .book-card').forEach(el=>el.classList.add('visible'));
+        return;
+      }
+
+      const observerOpts = { root: null, rootMargin: '0px 0px -8% 0px', threshold: 0.08 };
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            if (el.parentElement && el.parentElement.classList.contains('timeline-list')) {
+              const children = Array.from(el.parentElement.children);
+              const idx = children.indexOf(el);
+              el.style.setProperty('--delay', (idx * 0.06) + 's');
+            }
+            if (el.classList.contains('book-card')) {
+              const cards = Array.from(document.querySelectorAll('.catalog-list .book-card'));
+              const idx = cards.indexOf(el);
+              el.style.setProperty('--delay', (idx * 0.08) + 's');
+            }
+            el.classList.add('visible');
+            obs.unobserve(el);
+          }
+        });
+      }, observerOpts);
+
+      document.querySelectorAll('.section, .timeline-list li, .catalog-list .book-card').forEach((el)=> io.observe(el));
+    })();
+  </script>
+      <script>
+        // Simple page-local lightbox for gallery (only active on this page)
+        (function(){
+          const lb = document.getElementById('lb');
+          const lbImg = document.getElementById('lbImg');
+          const lbCaption = document.getElementById('lbCaption');
+          const lbClose = document.getElementById('lbClose');
+          if (!lb) return;
+          function open(src, caption){ lbImg.src = src; lbImg.alt = caption || ''; lbCaption.textContent = caption || ''; lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+          function close(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; lbCaption.textContent=''; document.body.style.overflow=''; }
+          document.querySelectorAll('.gallery figure').forEach(fig => {
+            fig.addEventListener('click', ()=> open(fig.dataset.src || fig.querySelector('img').src, fig.dataset.caption || ''));
+            fig.addEventListener('keypress', (e)=>{ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(fig.dataset.src || fig.querySelector('img').src, fig.dataset.caption || ''); } });
+          });
+          lbClose.addEventListener('click', close);
+          lb.addEventListener('click', (e)=>{ if (e.target === lb) close(); });
+          document.addEventListener('keydown', (e)=>{ if (e.key === 'Escape') close(); });
+        })();
+      </script>
+  <script src="ux.js" defer></script>
+</body>
+</html>

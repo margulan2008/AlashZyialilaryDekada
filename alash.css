@@ -1,0 +1,113 @@
+/* alash.css — New page-scoped stylesheet for alash.html
+   - Complete, standalone styling improvements for the Alash page
+   - Scoped to body.alash-page to prevent bleed into other pages
+   - Faster, tactile microinteractions; accessible reduced-motion support
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&family=EB+Garamond:wght@400;600;700&display=swap');
+
+:root{
+  --paper: #f6e9b4;     /* parchment base */
+  --paper-deep: #f1e2a2;
+  --accent: #d9c38a;    /* decorative accent */
+  --warm: #bfa45a;      /* gold */
+  --text: #4b3f22;      /* deep brown */
+  --muted: #8f7a42;     /* secondary */
+  --card: rgba(255,252,242,0.92);
+}
+
+/* Scope specifically to the Alash page */
+body.alash-page{
+  background: linear-gradient(180deg,var(--paper), var(--paper-deep) 140%);
+  color:var(--text);
+  font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  padding:22px 12px 48px 12px;
+}
+
+/* Main container */
+body.alash-page main{
+  max-width:1150px; margin:28px auto; padding:28px; background:linear-gradient(180deg, rgba(255,250,236,0.98), rgba(255,250,230,0.96));
+  border-radius:14px; border:1px solid rgba(175,140,70,0.12); box-shadow:0 18px 48px rgba(175,140,70,0.08);
+}
+
+/* Subtle paper texture overlay using gradients (no images) */
+body.alash-page main::before{
+  content:''; position:absolute; pointer-events:none; inset:0; border-radius:14px; z-index:0;
+  background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 6px);
+  mix-blend-mode: overlay; opacity:0.6;
+}
+
+/* Header */
+body.alash-page header.header{ display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:6px; }
+body.alash-page .nav a{ font-family:'EB Garamond', serif; text-decoration:none; color:var(--text); }
+
+/* Hero */
+.hero-biography{ display:flex; gap:22px; align-items:flex-start; flex-wrap:wrap; position:relative; z-index:1; }
+body.alash-page .bio-summary{ max-width:700px; z-index:1; }
+body.alash-page .book-title{ font-family:'IM Fell English', serif; font-size:clamp(2rem, 2.8rem + 1vw, 3.4rem); margin:0 0 6px 0; color:var(--text); line-height:1.02; }
+body.alash-page .book-subtitle{ font-family:'EB Garamond', serif; font-size:clamp(.95rem, 1rem + .2vw, 1.05rem); margin:0 0 10px 0; color:var(--muted); }
+
+/* Portrait - a tighter, snappy hover */
+body.alash-page .portrait{ width:320px; height:320px; border-radius:10px; background:#fff; border:3px solid var(--accent); box-shadow:0 14px 36px rgba(160,126,48,0.12); transition: transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s ease; z-index:1; overflow:hidden; display:block; }
+body.alash-page .portrait:hover{ transform:translateY(-6px) scale(1.02); box-shadow:0 28px 62px rgba(160,126,48,0.16); }
+body.alash-page .portrait img.portrait-img{ width:100%; height:100%; object-fit:cover; display:block; border-radius:8px; }
+body.alash-page .portrait.tilt-target{ transform-style:preserve-3d; will-change:transform; }
+@keyframes alash-bob { from{ transform: translateY(0);} 50%{ transform: translateY(-5px);} to{ transform: translateY(0);} }
+.portrait.auto-bob{ animation: alash-bob 4s ease-in-out infinite; }
+
+/* Sections */
+body.alash-page .section{ margin-top:18px; padding:14px; background:var(--card); border-radius:10px; border:1px solid rgba(160,126,48,0.06); box-shadow:0 6px 20px rgba(170,138,60,0.04); }
+body.alash-page .section h3{ font-family:'IM Fell English', serif; font-size:1.45rem; margin:0 0 8px 0; }
+body.alash-page .section p, body.alash-page .section li{ color:var(--text); font-size:1rem; line-height:1.7; }
+
+/* Drop cap style for summary */
+body.alash-page #summary p:first-letter{ float:left; font-family:'IM Fell English', serif; font-size:2.4rem; color:var(--warm); padding-right:8px; line-height:1; }
+
+/* Timeline */
+body.alash-page .timeline-controls{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+body.alash-page .btn-small{ background:transparent; border:1px solid rgba(160,126,48,0.12); padding:8px 12px; border-radius:10px; color:var(--text); cursor:pointer; transition: transform .14s ease, background .14s ease; }
+body.alash-page .btn-small:hover{ transform:translateY(-3px); background:linear-gradient(180deg, rgba(191,164,90,0.04), rgba(191,164,90,0.02)); }
+
+body.alash-page .timeline-list{ list-style:none; padding-left:0; margin:0; }
+body.alash-page .timeline-list li{ padding:12px 14px; border-left:3px solid rgba(160,126,48,0.10); margin-bottom:8px; border-radius:6px; transition: transform .18s ease, background .18s ease; }
+body.alash-page .timeline-list li:hover{ transform:translateX(6px); background:linear-gradient(90deg, rgba(255,250,236,0.6), rgba(255,248,220,0.4)); }
+
+/* Catalog cards */
+body.alash-page .catalog-list{ display:flex; gap:16px; flex-wrap:wrap; margin-top:12px; }
+body.alash-page .book-card{ width:320px; background:linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,250,236,0.94)); border-radius:12px; padding:14px; box-shadow:0 8px 28px rgba(170,138,60,0.06); border:1px solid rgba(160,126,48,0.06); transition: transform .18s ease; }
+body.alash-page .book-card:hover{ transform:translateY(-6px); }
+body.alash-page .book-card h4{ margin:0 0 6px 0; font-family:'IM Fell English', serif; font-size:1.05rem; }
+body.alash-page .book-card .card-img{ width:100%; height:180px; object-fit:cover; border-radius:8px; display:block; margin-bottom:10px; }
+
+/* CTA */
+body.alash-page .main-button{ display:inline-block; padding:10px 18px; border-radius:24px; background:linear-gradient(90deg,var(--warm) 60%, var(--muted)); color:var(--text); text-decoration:none; box-shadow:0 8px 26px rgba(160,126,48,0.12); border:1px solid rgba(160,126,48,0.08); transition: transform .16s ease, box-shadow .16s ease; }
+body.alash-page .main-button:hover{ transform:translateY(-4px); }
+
+/* Animations: snappy but accessible */
+@keyframes alashFade { from{ opacity:0; transform:translateY(6px); } to{ opacity:1; transform:none; } }
+@keyframes alashRise { from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+
+.fade-in{ animation: alashFade 360ms cubic-bezier(.22,.9,.28,1) both var(--delay,0s); }
+.timeline-list li, .catalog-list .book-card{ opacity:0; transform:translateY(6px); animation: alashRise 320ms cubic-bezier(.22,.85,.26,1) both; animation-delay: var(--delay,0s); }
+.timeline-list li.visible, .catalog-list .book-card.visible{ opacity:1; transform:none; }
+
+/* Highlight */
+.highlight{ animation: alash-highlight 720ms ease-in-out; }
+@keyframes alash-highlight{ 0%{ box-shadow:0 0 0 0 rgba(160,126,48,0); } 45%{ box-shadow:0 12px 36px rgba(160,126,48,0.16); } 100%{ box-shadow:0 0 0 0 rgba(160,126,48,0); } }
+
+/* Reduced motion respect */
+@media (prefers-reduced-motion: reduce){
+  .fade-in, .timeline-list li, .catalog-list .book-card, .portrait, .btn-small, .main-button{ animation:none !important; transition:none !important; transform:none !important; }
+}
+
+/* Responsive tweaks */
+@media (max-width:920px){
+  body.alash-page main{ padding:18px; }
+  .hero-biography{ flex-direction:column-reverse; align-items:center; }
+  .portrait{ width:220px; height:220px; }
+  .book-card{ width:100%; }
+}
+
+/* Accessibility helpers */
+body.alash-page a:focus{ outline:3px solid rgba(160,126,48,0.14); outline-offset:3px; }

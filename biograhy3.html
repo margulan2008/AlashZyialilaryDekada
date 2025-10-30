@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Міржақып Дулатов — Тіршілік пен мұра</title>
+
+  <link rel="stylesheet" href="biography.css">
+  <style>
+    .hero-biography {display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+    .portrait {width:320px;height:320px;border-radius:12px;background:#fff center/cover no-repeat;box-shadow:0 12px 30px rgba(90,27,27,0.15);border:3px solid #e6a39c;flex:0 0 320px;}
+    .bio-summary {max-width:580px;}
+    .section {margin-top:28px;}
+    .timeline-list {list-style:none;padding-left:0;}
+    .timeline-list li {padding:12px 0;border-bottom:1px dashed rgba(191,90,90,0.15);}
+    .timeline-controls {display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+    .btn-small {background:transparent;border:1px solid #bf4f4f;padding:8px 12px;border-radius:10px;color:var(--text-main);cursor:pointer;}
+    .highlight {background:linear-gradient(90deg,#ffe0e0,#ffd0d0);box-shadow:0 6px 18px rgba(191,90,90,0.12);}
+    .book-card .card-img{width:100%;height:220px;object-fit:cover;border-radius:10px;margin-bottom:12px;}
+    @media (max-width:900px){.hero-biography{flex-direction:column-reverse}.portrait{width:220px;height:220px}}
+  </style>
+</head>
+<body class="biography-page">
+  <header class="header">
+    <div class="logo"></div>
+    <nav class="nav">
+      <a href="index.html" class="btn-small">Басты бет</a>
+      <a href="#timeline" class="btn-small">Хронология</a>
+      <a href="#legacy" class="btn-small">Мұра</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="main historical-main fade-in">
+      <div class="hero-biography">
+        <div class="bio-summary">
+          <h1 class="book-title">Міржақып Дулатов</h1>
+          <h2 class="book-subtitle">(1885–1935) — жазушы, ақын, қоғам қайраткері</h2>
+          <p>Міржақып Дулатов — қазақтың ұлт азаттығы жолындағы күресте ерекше орын алған тұлға. Ол «Оян, қазақ!» еңбегі арқылы халықты білім мен еркіндікке шақырды. Қаламгер, педагог және Алаш қозғалысының белсенді мүшесі болған.</p>
+          <p style="margin-top:18px"><a class="main-button" href="#timeline">Хронологияны қарау</a></p>
+        </div>
+
+        <div class="portrait" style="background-image:url('mirzhakyp.jpg')" aria-hidden="true"></div>
+      </div>
+
+      <div class="section" id="summary">
+        <h3>Қысқаша мәлімет</h3>
+        <p>Міржақып Дулатов — ХХ ғасыр басындағы қазақ әдебиетінің ірі өкілі, Алаш қозғалысының белсенді қайраткері. Оның шығармалары ұлттық сана мен рухани жаңғыруды дәріптейді. «Оян, қазақ!» кітабы сол дәуірдің ұранына айналды.</p>
+      </div>
+
+      <div class="section" id="timeline">
+        <h3>Хронология</h3>
+        <div class="timeline-controls">
+          <button class="btn-small" data-target="1885">1885</button>
+          <button class="btn-small" data-target="1909">1909</button>
+          <button class="btn-small" data-target="1913">1913</button>
+          <button class="btn-small" data-target="1917">1917</button>
+          <button class="btn-small" data-target="1935">1935</button>
+        </div>
+        <ul class="timeline-list">
+          <li id="t-1885"><b>1885:</b> Торғай облысы, Қостанай өңірінде дүниеге келді.</li>
+          <li id="t-1909"><b>1909:</b> «Оян, қазақ!» атты әйгілі кітабы жарық көрді.</li>
+          <li id="t-1913"><b>1913:</b> «Қазақ» газетінің редакциясында Ахмет Байтұрсынов және Әлихан Бөкейханмен бірге жұмыс істеді.</li>
+          <li id="t-1917"><b>1917:</b> Алаш партиясы мен үкіметінің жұмысына қатысты.</li>
+          <li id="t-1935"><b>1935:</b> Саяси қуғын-сүргін кезінде қайтыс болды.</li>
+        </ul>
+      </div>
+
+      <div class="section" id="works">
+        <h3>Негізгі еңбектері мен қызметтері</h3>
+        <ul>
+          <li>«Оян, қазақ!» — халықтың азаттығын насихаттаған рухани еңбек.</li>
+          <li>«Бақытсыз Жамал» — қазақ әдебиетіндегі алғашқы реалистік роман.</li>
+          <li>«Қазақ» газетінің ұйымдастырушысы және редакторы.</li>
+        </ul>
+      </div>
+
+      <div class="section" id="legacy">
+        <h3>Мұра</h3>
+        <p>Міржақып Дулатовтың шығармалары мен қоғамдық қызметі қазақ халқының ұлттық санасын оятуға бағытталды. Оның еңбектері бүгінгі әдебиет пен тарихта өзекті болып қала береді.</p>
+      </div>
+
+      <hr>
+
+      <div class="section">
+        <h3>Қосымша ақпарат</h3>
+        <div class="catalog-list">
+          <div class="book-card">
+            <img class="card-img" src="mirzhakyp_book.jpg" alt="Міржақып Дулатов">
+            <h4>Биография кітаптары</h4>
+            <p>Міржақып Дулатов туралы жазылған еңбектер оның өмір жолы мен күресін терең түсіндіреді. Бұл кітаптар оның әдеби және саяси мұрасын бағалауға көмектеседі.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-logo"></div>
+    <div class="footer-text">© 2025 Алаш мұра — тарихи деректер. Барлық құқықтар қорғалған.</div>
+  </footer>
+
+  <script>
+    (function(){
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.querySelectorAll('.timeline-controls button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.dataset.target;
+          const el = document.getElementById('t-' + target);
+          if (el) {
+            el.scrollIntoView({behavior: prefersReduced ? 'auto' : 'smooth', block:'center'});
+            el.classList.add('highlight');
+            setTimeout(()=>el.classList.remove('highlight'),1200);
+          }
+        });
+      });
+      if (!('IntersectionObserver' in window) || prefersReduced) {
+        document.querySelectorAll('.section, .timeline-list li, .catalog-list .book-card').forEach(el=>el.classList.add('visible'));
+        return;
+      }
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {threshold:0.1});
+      document.querySelectorAll('.section, .timeline-list li, .catalog-list .book-card').forEach(el=>io.observe(el));
+    })();
+  </script>
+</body>
+</html>

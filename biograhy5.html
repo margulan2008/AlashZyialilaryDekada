@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Мұстафа Шоқай — Тіршілік пен мұра</title>
+
+  <link rel="stylesheet" href="biography.css">
+  <style>
+    .hero-biography {display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+    .portrait {width:320px;height:320px;border-radius:12px;background:#fff center/cover no-repeat;box-shadow:0 12px 30px rgba(30,90,70,0.12);border:3px solid #9ed1b9;flex:0 0 320px;}
+    .bio-summary {max-width:580px;}
+    .section {margin-top:28px;}
+    .timeline-list {list-style:none;padding-left:0;}
+    .timeline-list li {padding:12px 0;border-bottom:1px dashed rgba(158,209,185,0.14);}
+    .timeline-controls {display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+    .btn-small {background:transparent;border:1px solid #4fa886;padding:8px 12px;border-radius:10px;color:var(--text-main);cursor:pointer;}
+    .highlight {background:linear-gradient(90deg,#eafff5,#e0fff0);box-shadow:0 6px 18px rgba(79,168,134,0.10);}
+    .book-card .card-img{width:100%;height:220px;object-fit:cover;border-radius:10px;margin-bottom:12px;}
+    @media (max-width:900px){.hero-biography{flex-direction:column-reverse}.portrait{width:220px;height:220px}}
+  </style>
+</head>
+<body class="biography-page">
+  <header class="header">
+    <div class="logo"></div>
+    <nav class="nav">
+      <a href="index.html" class="btn-small">Басты бет</a>
+      <a href="#timeline" class="btn-small">Хронология</a>
+      <a href="#legacy" class="btn-small">Мұра</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="main historical-main fade-in">
+      <div class="hero-biography">
+        <div class="bio-summary">
+          <h1 class="book-title">Мұстафа Шоқай</h1>
+          <h2 class="book-subtitle">(25 желтоқсан 1890 — 27 желтоқсан 1941) — саяси қайраткер, қоғам идеологы</h2>
+          <p>Мұстафа Шоқай — Түркістан автономиясы мен қазақ ұлт-азаттық қозғалысының көрнекті тұлғаларының бірі. Ол білім алып, кәсіп етіп, Ресейдегі революциялық кезеңдер кезінде саяси өмірге белсене араласты. Кейінгі жылдарын эмиграцияда өткізіп, Ұлы Түркістан идеясын насихаттады.</p>
+          <p style="margin-top:18px"><a class="main-button" href="#timeline">Хронологияны қарау</a></p>
+        </div>
+
+        <div class="portrait" style="background-image:url('mustafa_shokay.jpg')" aria-hidden="true"></div>
+      </div>
+
+      <div class="section" id="summary">
+        <h3>Қысқаша мәлімет</h3>
+        <p>Мұстафа Шоқай — заңгерлік білім алған, қоғамдық-саяси әдебиеттер жазған және Түркістанның дербестігі үшін күрескен көшбасшы. Ол 1917 жылы Түркістан автономиясы үкіметінде қызмет атқарған және кейінгі жылдары саяси эмиграцияда құрылған түрлі ұйымдарда белсенді болды.</p>
+      </div>
+
+      <div class="section" id="timeline">
+        <h3>Хронология</h3>
+        <div class="timeline-controls">
+          <button class="btn-small" data-target="1890">1890</button>
+          <button class="btn-small" data-target="1917">1917</button>
+          <button class="btn-small" data-target="1918">1918</button>
+          <button class="btn-small" data-target="1921">1921</button>
+          <button class="btn-small" data-target="1941">1941</button>
+        </div>
+        <ul class="timeline-list">
+          <li id="t-1890"><b>25 желтоқсан 1890:</b> туған жері — қазіргі Қызылорда облысы аумағында дүниеге келді. </li>
+          <li id="t-1917"><b>1917:</b> Ресейдегі саяси өзгерістер кезінде қоғам саясатына белсене араласты, Түркістан автономиясы жұмысына қатысты.</li>
+          <li id="t-1918"><b>1918:</b> Азамат соғысы мен үстемдік үшін күрес кезеңінде саяси көшбасшылық қызмет атқарды.</li>
+          <li id="t-1921"><b>1921:</b> Эмиграцияға кетіп, Батыс Еуропада және Түркияда саяси-қоғамдық жұмыстар жүргізді.</li>
+          <li id="t-1941"><b>27 желтоқсан 1941:</b> Берлиндегі өмірінің соңғы күндері — қайтыс болды.</li>
+        </ul>
+      </div>
+
+      <div class="section" id="works">
+        <h3>Негізгі қызметтері мен рөлі</h3>
+        <ul>
+          <li>Түркістан мен қазақ ұлт-азаттық қозғалысында саясаткер ретінде жүрген.</li>
+          <li>Эмиграцияда ұлттық идеяларды жариялап, ұйымдар құруда белсенділік көрсетті.</li>
+          <li>Ғылыми және публицистикалық еңбектер арқылы халықтың саяси санасын оятуға тырысты.</li>
+        </ul>
+      </div>
+
+      <div class="section" id="legacy">
+        <h3>Мұра</h3>
+        <p>Шоқайдың мұрасы — Түркістан және қазақ ұлттық тәуелсіздігі идеясын ұстанған публицистика мен саяси іс әрекеттер. Оның өмірі мен еңбектері бүгінгі күнге дейін талқыланып, зерттеледі.</p>
+      </div>
+
+      <hr>
+
+      <div class="section">
+        <h3>Қосымша ақпарат</h3>
+        <div class="catalog-list">
+          <div class="book-card">
+            <img class="card-img" src="mustafa_book.jpg" alt="Мұстафа Шоқай">
+            <h4>Арнайы зерттеулер мен деректер</h4>
+            <p>Мұстафа Шоқай туралы археографиялық зерттеулер мен деректі кітаптар оның саяси іс-әрекеттерін және эмиграциядағы қызметін жан-жақты сипаттайды.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-logo"></div>
+    <div class="footer-text">© 2025 Алаш мұра — тарихи деректер. Барлық құқықтар қорғалған.</div>
+  </footer>
+
+  <script>
+    (function(){
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.querySelectorAll('.timeline-controls button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.dataset.target;
+          const el = document.getElementById('t-' + target);
+          if (el) {
+            el.scrollIntoView({behavior: prefersReduced ? 'auto' : 'smooth', block:'center'});
+            el.classList.add('highlight');
+            setTimeout(()=>el.classList.remove('highlight'),1200);
+          }
+        });
+      });
+      if (!('IntersectionObserver' in window) || prefersReduced) {
+        document.querySelectorAll('.section, .timeline-list li, .catalog-list .book-card').forEach(el=>el.classList.add('visible'));
+        return;
+      }
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {threshold:0.1});
+      document.querySelectorAll('.section, .timeline-list li, .catalog-list .book-card').forEach(el=>io.observe(el));
+    })();
+  </script>
+</body>
+</html>

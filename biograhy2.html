@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ахмет Байтұрсынов — Тіршілік пен мұра</title>
+
+  <link rel="stylesheet" href="biography.css">
+  <style>
+    .hero-biography {display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+    .portrait {width:320px;height:320px;border-radius:12px;background:#fff center/cover no-repeat;box-shadow:0 12px 30px rgba(27,74,90,0.15);border:3px solid #9cc3e6;flex:0 0 320px;}
+    .bio-summary {max-width:580px;}
+    .section {margin-top:28px;}
+    .timeline-list {list-style:none;padding-left:0;}
+    .timeline-list li {padding:12px 0;border-bottom:1px dashed rgba(90,164,191,0.15);}
+    .timeline-controls {display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+    .btn-small {background:transparent;border:1px solid #4f9ebf;padding:8px 12px;border-radius:10px;color:var(--text-main);cursor:pointer;}
+    .highlight {background:linear-gradient(90deg,#e0f6ff,#d0f0ff);box-shadow:0 6px 18px rgba(90,164,191,0.12);}
+    .book-card .card-img{width:100%;height:220px;object-fit:cover;border-radius:10px;margin-bottom:12px;}
+    @media (max-width:900px){.hero-biography{flex-direction:column-reverse}.portrait{width:220px;height:220px}}
+  </style>
+</head>
+<body class="biography-page">
+  <header class="header">
+    <div class="logo"></div>
+    <nav class="nav">
+      <a href="index.html" class="btn-small">Басты бет</a>
+      <a href="#timeline" class="btn-small">Хронология</a>
+      <a href="#legacy" class="btn-small">Мұра</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="main historical-main fade-in">
+      <div class="hero-biography">
+        <div class="bio-summary">
+          <h1 class="book-title">Ахмет Байтұрсынов</h1>
+          <h2 class="book-subtitle">(1872–1937) — ағартушы, тілші, қоғам қайраткері</h2>
+          <p>Ахмет Байтұрсынов — қазақ халқының рухани көсемдерінің бірі, ұлт тілінің реформаторы, педагог және журналист. Ол тіл ғылымының дамуына, оқу-ағарту ісіне және Алаш қозғалысына үлкен үлес қосты. Бұл бетте оның өмір жолы мен мұрасы туралы мәлімет берілген.</p>
+          <p style="margin-top:18px"><a class="main-button" href="#timeline">Хронологияны қарау</a></p>
+        </div>
+
+        <div class="portrait" style="background-image:url('ahmet.jpg')" aria-hidden="true"></div>
+      </div>
+
+      <div class="section" id="summary">
+        <h3>Қысқаша мәлімет</h3>
+        <p>Ахмет Байтұрсынов — қазақ тіл білімінің негізін қалаушы, әліпбиді реформалаған, халыққа білім мен мәдениетті жеткізуді өмірлік мақсат еткен тұлға. Ол «Қазақ» газетінің негізін қалап, елдің саяси санасын оятуда ерекше рөл атқарды.</p>
+      </div>
+
+      <div class="section" id="timeline">
+        <h3>Хронология</h3>
+        <div class="timeline-controls">
+          <button class="btn-small" data-target="1872">1872</button>
+          <button class="btn-small" data-target="1895">1895</button>
+          <button class="btn-small" data-target="1913">1913</button>
+          <button class="btn-small" data-target="1917">1917</button>
+          <button class="btn-small" data-target="1937">1937</button>
+        </div>
+        <ul class="timeline-list">
+          <li id="t-1872"><b>1872:</b> Торғай өңірінде дүниеге келді.</li>
+          <li id="t-1895"><b>1895:</b> Оқу-ағарту саласында қызметін бастады, мұғалімдік етті.</li>
+          <li id="t-1913"><b>1913:</b> «Қазақ» газетінің бас редакторы болып, ұлттық сана мен тіл мәселелерін көтерді.</li>
+          <li id="t-1917"><b>1917:</b> Алаш қозғалысына белсене араласты, білім және мәдениет бағытында еңбек етті.</li>
+          <li id="t-1937"><b>1937:</b> Саяси қуғын-сүргін жылдары жазықсыз атылды.</li>
+        </ul>
+      </div>
+
+      <div class="section" id="works">
+        <h3>Негізгі еңбектері мен қызметтері</h3>
+        <ul>
+          <li>«Тіл-құрал» — қазақ тілінің грамматикасына арналған тұңғыш оқулықтар жинағы.</li>
+          <li>«Қазақ» газеті — ұлттың рухани және саяси ойының орталығы.</li>
+          <li>Қазақ әліпбиін (төте жазуды) реформалау және халыққа түсіндіру жұмыстары.</li>
+        </ul>
+      </div>
+
+      <div class="section" id="legacy">
+        <h3>Мұра</h3>
+        <p>Ахмет Байтұрсыновтың еңбектері қазақ тіл білімінің, әдебиеттанудың және ағартушылықтың іргетасы болып табылады. Оның мұрасы — тілге деген құрмет пен білімге ұмтылыстың символы.</p>
+      </div>
+
+      <hr>
+
+      <div class="section">
+        <h3>Қосымша ақпарат</h3>
+        <div class="catalog-list">
+          <div class="book-card">
+            <img class="card-img" src="baitursynov_book.jpg" alt="Ахмет Байтұрсынов">
+            <h4>Биография кітаптары</h4>
+            <p>Ахмет Байтұрсынов туралы көптеген зерттеулер мен еңбектер жазылған. Олар оның өмірі мен ұлтқа сіңірген еңбегін кеңінен талдайды.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-logo"></div>
+    <div class="footer-text">© 2025 Алаш мұра — тарихи деректер. Барлық құқықтар қорғалған.</div>
+  </footer>
+
+  <script>
+    (function(){
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.querySelectorAll('.timeline-controls button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.dataset.target;
+          const el = document.getElementById('t-' + target);
+          if (el) {
+            el.scrollIntoView({behavior: prefersReduced ? 'auto' : 'smooth', block:'center'});
+            el.classList.add('highlight');
+            setTimeout(()=>el.classList.remove('highlight'),1200);
+          }
+        });
+      });
+      if (!('IntersectionObserver' in window) || prefersReduced) {
+        document.querySelectorAll('.section, .timeline-list li, .catalog-list .book-card').forEach(el=>el.classList.add('visible'));
+        return;
+      }
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {threshold:0.1});
+      document.querySelectorAll('.section, .timeline-list li, .catalog-list .book-card').forEach(el=>io.observe(el));
+    })();
+  </script>
+</body>
+</html>

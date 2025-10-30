@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Халел Досмұхамедұлы — Тіршілік пен мұра</title>
+
+  <link rel="stylesheet" href="biography.css">
+  <style>
+    .hero-biography {display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+    .portrait {width:320px;height:320px;border-radius:12px;background:#fff center/cover no-repeat;box-shadow:0 12px 30px rgba(50,60,90,0.12);border:3px solid #a9c0e6;flex:0 0 320px;}
+    .bio-summary {max-width:580px;}
+    .section {margin-top:28px;}
+    .timeline-list {list-style:none;padding-left:0;}
+    .timeline-list li {padding:12px 0;border-bottom:1px dashed rgba(169,192,230,0.14);}
+    .timeline-controls {display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+    .btn-small {background:transparent;border:1px solid #6b93bf;padding:8px 12px;border-radius:10px;color:var(--text-main);cursor:pointer;}
+    .highlight {background:linear-gradient(90deg,#eef7ff,#e6f0ff);box-shadow:0 6px 18px rgba(107,147,191,0.08);}
+    .book-card .card-img{width:100%;height:220px;object-fit:cover;border-radius:10px;margin-bottom:12px;}
+    @media (max-width:900px){.hero-biography{flex-direction:column-reverse}.portrait{width:220px;height:220px}}
+  </style>
+</head>
+<body class="biography-page">
+  <header class="header">
+    <div class="logo"></div>
+    <nav class="nav">
+      <a href="index.html" class="btn-small">Басты бет</a>
+      <a href="#timeline" class="btn-small">Хронология</a>
+      <a href="#legacy" class="btn-small">Мұра</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="main historical-main fade-in">
+      <div class="hero-biography">
+        <div class="bio-summary">
+          <h1 class="book-title">Халел Досмұхамедұлы</h1>
+          <h2 class="book-subtitle">(1883–1939) — дәрігер, ғалым, ағартушы</h2>
+          <p>Халел Досмұхамедұлы — қазақтың алғашқы ғылыми дәрігерлерінің және ағартушыларының бірі. Ол медициналық білім мен қоғамдық денсаулық мәселелерін кеңінен дамытты, сонымен бірге Алаш зиялыларының мәдени-ағартушылық қозғалысында белсенді болды.</p>
+          <p style="margin-top:18px"><a class="main-button" href="#timeline">Хронологияны қарау</a></p>
+        </div>
+
+        <div class="portrait" style="background-image:url('halel.jpg')" aria-hidden="true"></div>
+      </div>
+
+      <div class="section" id="summary">
+        <h3>Қысқаша мәлімет</h3>
+        <p>Халел Досмұхамедұлы қазақ қоғамында медицина мен қоғамдық денсаулық саласын қалыптастыруға зор үлес қосты. Ол педагог ретінде де жұмыс істеп, жаңа ұрпақты дәрігерлік пен ғылымға баулыды. Алаш қозғалысының идеалдары мен ұлттық ағарту ісіне сенімді қолдау көрсетті.</p>
+      </div>
+
+      <div class="section" id="timeline">
+        <h3>Хронология</h3>
+        <div class="timeline-controls">
+          <button class="btn-small" data-target="1883">1883</button>
+          <button class="btn-small" data-target="1910">1910</button>
+          <button class="btn-small" data-target="1920">1920</button>
+          <button class="btn-small" data-target="1928">1928</button>
+          <button class="btn-small" data-target="1939">1939</button>
+        </div>
+        <ul class="timeline-list">
+          <li id="t-1883"><b>1883:</b> Туады (жергілікті дереккөздерде нақты аймақ көрсетіледі).</li>
+          <li id="t-1910"><b>1910:</b> Медицинаға білім алып, медициналық практиканы бастауы.</li>
+          <li id="t-1920"><b>1920:</b> Қоғамдық денсаулық пен мектеп медицинасы саласында қызмет етті; ағартушылық жұмыстарға қатысты.</li>
+          <li id="t-1928"><b>1928:</b> Ғылыми және педагогикалық еңбектер жариялап, жергілікті денсаулық сақтау жүйесін дамытуға үлес қосты.</li>
+          <li id="t-1939"><b>1939:</b> Өмірден озды; оның ғылыми және ағартушылық мұрасы кейінгі ұрпаққа әсер етті.</li>
+        </ul>
+      </div>
+
+      <div class="section" id="works">
+        <h3>Негізгі қызметтері мен еңбектері</h3>
+        <ul>
+          <li>Медицина саласында практикалық және ғылыми қызмет.</li>
+          <li>Ауыл медицинасының ұйымдастырылуына үлес қосу.</li>
+          <li>Ағартушылық және педагогикалық жұмыс: мектептер үшін денсаулық сақтау және адамгершілік тәрбие мәселелері бойынша материалдар жазды.</li>
+        </ul>
+      </div>
+
+      <div class="section" id="legacy">
+        <h3>Мұра</h3>
+        <p>Халел Досмұхамедұлының мұрасы — қазақ қоғамындағы медицинаның, ағартудың және қоғамдық денсаулықтың іргетасын қалаушы ретінде бағаланады. Ол өз замандастары мен кейінгі ұрпақ үшін үлгі болды.</p>
+      </div>
+
+      <hr>
+
+      <div class="section">
+        <h3>Қосымша ақпарат</h3>
+        <div class="catalog-list">
+          <div class="book-card">
+            <img class="card-img" src="halel_book.jpg" alt="Халел Досмұхамедұлы">
+            <h4>Зерттеулер мен әдебиеттер</h4>
+            <p>Халел туралы ғылыми мақалалар мен архив материалдары оның қызметін жан-жақты сипаттайды. Қажет болса, мен сен үшін библиография жинап, нақты сілтемелер қосып берейін.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-logo"></div>
+    <div class="footer-text">© 2025 Алаш мұра — тарихи деректер. Барлық құқықтар қорғалған.</div>
+  </footer>
+
+  <script>
+    (function(){
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.querySelectorAll('.timeline-controls button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.dataset.target;
+          const el = document.getElementById('t-' + target);
+          if (el) {
+            el.scrollIntoView({behavior: prefersReduced ? 'auto' : 'smooth', block:'center'});
+            el.classList.add('highlight');
+            setTimeout(()=>el.classList.remove('highlight'),1200);
+          }
+        });
+      });
+      if (!('IntersectionObserver' in window) || prefersReduced) {
+        document.querySelectorAll('.section, .timeline-list li, .catalog-list .book-card').forEach(el=>el.classList.add('visible'));
+        return;
+      }
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {threshold:0.1});
+      document.querySelectorAll('.section, .timeline-list li, .catalog-list .book-card').forEach(el=>io.observe(el));
+    })();
+  </script>
+</body>
+</html>

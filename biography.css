@@ -48,7 +48,16 @@ body.biography-page .book-desc{ margin:0 0 14px 0; color:rgba(90,74,27,0.96); fo
 /* Portrait */
 body.biography-page .portrait{ width:360px; height:360px; border-radius:12px; background:#fff; border:3px solid var(--accent); box-shadow:0 18px 48px rgba(191,164,90,0.18); transition:transform .5s ease, box-shadow .5s ease; overflow:hidden; display:block; }
 body.biography-page .portrait:hover{ transform:translateY(-6px) scale(1.02); box-shadow:0 28px 68px rgba(191,164,90,0.24); }
-body.biography-page .portrait img.portrait-img{ width:100%; height:100%; object-fit:cover; display:block; border-radius:9px; }
+body.biography-page .portrait img.portrait-img{
+  max-width:360px;
+  max-height:360px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  display:block;
+  margin:auto;
+  border-radius:9px;
+}
 body.biography-page .portrait.tilt-target{ transform-style:preserve-3d; will-change:transform; }
 /* micro bob for added life when not interacting */
 @keyframes bob { from{ transform: translateY(0);} 50%{ transform: translateY(-6px);} to{ transform: translateY(0);} }

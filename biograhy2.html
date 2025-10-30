@@ -7,17 +7,7 @@
 
   <link rel="stylesheet" href="biography.css">
   <style>
-    .hero-biography {display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap;}
-    .portrait {width:320px;height:320px;border-radius:12px;background:#fff center/cover no-repeat;box-shadow:0 12px 30px rgba(27,74,90,0.15);border:3px solid #9cc3e6;flex:0 0 320px;}
-    .bio-summary {max-width:580px;}
-    .section {margin-top:28px;}
-    .timeline-list {list-style:none;padding-left:0;}
-    .timeline-list li {padding:12px 0;border-bottom:1px dashed rgba(90,164,191,0.15);}
-    .timeline-controls {display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
-    .btn-small {background:transparent;border:1px solid #4f9ebf;padding:8px 12px;border-radius:10px;color:var(--text-main);cursor:pointer;}
-    .highlight {background:linear-gradient(90deg,#e0f6ff,#d0f0ff);box-shadow:0 6px 18px rgba(90,164,191,0.12);}
-    .book-card .card-img{width:100%;height:220px;object-fit:cover;border-radius:10px;margin-bottom:12px;}
-    @media (max-width:900px){.hero-biography{flex-direction:column-reverse}.portrait{width:220px;height:220px}}
+
   </style>
 </head>
 <body class="biography-page">
@@ -40,7 +30,9 @@
           <p style="margin-top:18px"><a class="main-button" href="#timeline">Хронологияны қарау</a></p>
         </div>
 
-        <div class="portrait" style="background-image:url('ahmet.jpg')" aria-hidden="true"></div>
+        <div class="portrait">
+          <img class="portrait-img" src="Ахмет_Байтұрсынұлы.jpg" alt="Ахмет Байтұрсынов портреті" width="360" height="360">
+        </div>
       </div>
 
       <div class="section" id="summary">
@@ -86,7 +78,7 @@
         <h3>Қосымша ақпарат</h3>
         <div class="catalog-list">
           <div class="book-card">
-            <img class="card-img" src="baitursynov_book.jpg" alt="Ахмет Байтұрсынов">
+            <img class="card-img" src="ahmet2.jpg" alt="Ахмет Байтұрсынов">
             <h4>Биография кітаптары</h4>
             <p>Ахмет Байтұрсынов туралы көптеген зерттеулер мен еңбектер жазылған. Олар оның өмірі мен ұлтқа сіңірген еңбегін кеңінен талдайды.</p>
           </div>

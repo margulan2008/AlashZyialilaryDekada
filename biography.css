@@ -1,0 +1,124 @@
+/* biography.css — Full, standalone stylesheet for biography page only
+   - Self-contained: imports fonts and uses the site's color palette directly
+   - Scoped to body.biography-page to avoid affecting other pages
+   - Layout, typography, timeline, portrait, cards and animations
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&family=EB+Garamond:wght@400;600;700&display=swap');
+
+/* Color palette (copied from main style) */
+:root{
+  --bg: #f7e7b2;          /* parchment */
+  --accent: #e6d19c;      /* decorative border */
+  --highlight: #fff8dc;   /* light paper */
+  --gold: #bfa45a;        /* antique gold */
+  --text: #5a4a1b;        /* dark brown text */
+  --muted: #a08c4a;       /* hover/secondary */
+  --white: #ffffff;
+}
+
+/* Scope everything to the biography page */
+body.biography-page{ 
+  background: linear-gradient(180deg,var(--bg), #f3e8b0 140%);
+  font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  color: var(--text);
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  padding: 28px 16px 60px 16px;
+}
+
+/* Main container */
+body.biography-page main{
+  max-width:1100px; margin:32px auto; padding:34px; background:linear-gradient(180deg, var(--highlight), rgba(255,250,236,0.9));
+  border-radius:16px; border:2px solid rgba(191,164,90,0.18); box-shadow:0 20px 60px rgba(191,164,90,0.12);
+}
+
+/* Header / nav inside biography page */
+body.biography-page header.header{ display:flex; justify-content:space-between; align-items:center; gap:16px; padding:8px 0 18px 0; }
+body.biography-page .logo{ width:84px; height:70px; background:transparent; border-radius:8px; background-size:contain; background-repeat:no-repeat; }
+body.biography-page .nav a.btn-small{ font-family: 'EB Garamond', serif; color:var(--text); text-decoration:none; border:1px solid rgba(191,164,90,0.14); background:rgba(255,255,255,0.6); padding:8px 12px; border-radius:10px; }
+body.biography-page .nav a.btn-small:hover{ background:linear-gradient(180deg, rgba(191,164,90,0.06), rgba(191,164,90,0.02)); color:var(--muted); }
+
+/* Hero */
+.hero-biography{ display:flex; gap:28px; align-items:flex-start; flex-wrap:wrap; }
+body.biography-page .bio-summary{ max-width:640px; }
+body.biography-page .book-title{ font-family:'IM Fell English', serif; font-size:3.2rem; margin:0 0 8px 0; color:var(--text); line-height:1; }
+body.biography-page .book-subtitle{ font-family:'EB Garamond', serif; font-size:1.15rem; margin:0 0 14px 0; color:var(--muted); }
+body.biography-page .book-desc{ margin:0 0 16px 0; color:rgba(90,74,27,0.94); font-size:1.02rem; }
+
+/* Portrait */
+body.biography-page .portrait{ width:360px; height:360px; border-radius:12px; background:#fff center/cover no-repeat; border:3px solid var(--accent); box-shadow:0 18px 48px rgba(191,164,90,0.18); transition:transform .5s ease, box-shadow .5s ease; }
+body.biography-page .portrait:hover{ transform:translateY(-6px) scale(1.02); box-shadow:0 28px 68px rgba(191,164,90,0.24); }
+
+/* Sections */
+body.biography-page .section{ margin-top:28px; padding:18px 14px; background:rgba(255,255,255,0.6); border-radius:12px; border:1px solid rgba(191,164,90,0.08); }
+body.biography-page .section h3{ font-family:'IM Fell English', serif; font-size:1.5rem; margin:0 0 8px 0; color:var(--text); }
+body.biography-page .section p, .section li{ color:var(--text); font-size:1rem; line-height:1.7; }
+
+/* Drop cap for main summary */
+body.biography-page .section#summary p:first-letter{ float:left; font-family:'IM Fell English', serif; font-size:2.6rem; color:var(--gold); padding-right:8px; line-height:1; }
+
+/* Timeline */
+body.biography-page .timeline-controls{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
+body.biography-page .btn-small{ background:transparent; border:1px solid rgba(191,164,90,0.12); padding:8px 12px; border-radius:10px; color:var(--text); cursor:pointer; }
+body.biography-page .btn-small:hover{ background:linear-gradient(180deg, rgba(191,164,90,0.06), rgba(191,164,90,0.02)); color:var(--muted); }
+
+body.biography-page .timeline-list{ list-style:none; padding-left:0; margin:0; }
+body.biography-page .timeline-list li{ padding:14px 16px; border-left:3px solid rgba(191,164,90,0.12); margin-bottom:10px; border-radius:6px; transition:transform .18s ease, background .18s ease; }
+body.biography-page .timeline-list li:hover{ transform:translateX(6px); background:linear-gradient(90deg, rgba(255,250,236,0.6), rgba(255,248,220,0.4)); }
+
+/* Catalog / cards */
+body.biography-page .catalog-list{ display:flex; gap:18px; flex-wrap:wrap; margin-top:12px; }
+body.biography-page .book-card{ width:340px; background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,250,236,0.85)); border-radius:12px; padding:16px; box-shadow:0 10px 30px rgba(191,164,90,0.08); border:1px solid rgba(191,164,90,0.08); }
+body.biography-page .book-card h4{ margin:0 0 6px 0; font-family:'IM Fell English', serif; font-size:1.05rem; }
+body.biography-page .book-card p{ margin:0; }
+body.biography-page .book-card .card-img{ width:100%; height:200px; object-fit:cover; border-radius:10px; display:block; margin-bottom:12px; }
+
+/* View-all / main button */
+body.biography-page .view-all{ display:inline-block; text-decoration:none; padding:12px 20px; border-radius:28px; background:linear-gradient(90deg,var(--gold) 60%, var(--muted)); color:var(--text); box-shadow:0 8px 28px rgba(191,164,90,0.12); border:1px solid rgba(191,164,90,0.1); }
+body.biography-page .view-all:hover{ transform:translateY(-4px); }
+
+/* Highlight (search / scroll) */
+body.biography-page .highlight{ animation:highlightPulse 1.1s ease-in-out; }
+@keyframes highlightPulse{ 0%{ box-shadow:0 0 0 0 rgba(191,164,90,0); } 40%{ box-shadow:0 12px 36px rgba(191,164,90,0.16); } 100%{ box-shadow:0 0 0 0 rgba(191,164,90,0); } }
+
+/* Reveal on scroll helper classes (JS will add .visible) */
+body.biography-page .section{ opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s ease; }
+body.biography-page .section.visible{ opacity:1; transform:none; }
+
+/* small screens */
+@media (max-width:920px){
+  body.biography-page main{ padding:20px; }
+  .hero-biography{ flex-direction:column-reverse; align-items:center; }
+  .portrait{ width:220px; height:220px; }
+  .book-card{ width:100%; }
+}
+
+/* Accessibility / utility */
+body.biography-page a{ color:var(--text); }
+body.biography-page a:focus{ outline:3px solid rgba(191,164,90,0.18); outline-offset:3px; }
+
+/* Page and UI animations */
+@keyframes pageFade { from{ opacity:0; transform:translateY(6px); } to{ opacity:1; transform:none; } }
+@keyframes slideUpFade { from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+@keyframes heroEntrance { from{ opacity:0; transform:translateY(8px) scale(.995); } to{ opacity:1; transform:none; } }
+
+/* fade-in helper (used in HTML) */
+.fade-in{ animation: pageFade 640ms cubic-bezier(.2,.9,.2,1) both var(--delay,0s); }
+
+/* Hero entrance: summary and portrait animate elegantly */
+.hero-biography .bio-summary{ transform-origin:left top; animation: heroEntrance 720ms cubic-bezier(.16,.84,.32,1) both; animation-delay: .08s; }
+.hero-biography .portrait{ transform-origin:center; animation: heroEntrance 820ms cubic-bezier(.16,.84,.32,1) both; animation-delay: .18s; }
+
+/* Staggered reveal for timeline items and cards using a CSS variable set by JS */
+.timeline-list li, .catalog-list .book-card{ opacity:0; transform:translateY(8px); animation: slideUpFade 520ms cubic-bezier(.2,.85,.22,1) both; animation-delay: var(--delay, 0s); }
+.timeline-list li.visible, .catalog-list .book-card.visible{ /* ensure visible state */ opacity:1; transform:none; }
+
+/* Slightly softer highlight with transform */
+.highlight{ animation: highlightPulse 1.1s ease-in-out; transform-origin:center; }
+@keyframes highlightPulse{ 0%{ box-shadow:0 0 0 0 rgba(191,164,90,0); transform:scale(1); } 40%{ box-shadow:0 18px 48px rgba(191,164,90,0.16); transform:scale(1.01); } 100%{ box-shadow:0 0 0 0 rgba(191,164,90,0); transform:scale(1); } }
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .fade-in, .hero-biography .bio-summary, .hero-biography .portrait, .timeline-list li, .catalog-list .book-card, .section{ animation: none !important; transition: none !important; transform: none !important; }
+}
+
